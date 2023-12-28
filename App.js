@@ -1,46 +1,25 @@
-import Animated, {
-  useSharedValue,
-  withTiming,
-  useAnimatedStyle,
-  Easing,
-} from "react-native-reanimated";
-import { View, Button } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigator from "./src/navigators/StackNavigator";
+import { store, persistor } from "./src/redux/store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { StripeProvider } from "@stripe/stripe-react-native";
 
-export default function AnimatedStyleUpdateExample(props) {
-  const randomWidth = useSharedValue(10);
-
-  const config = {
-    duration: 500,
-    easing: Easing.bezier(0.5, 0.01, 0, 1),
-  };
-
-  const style = useAnimatedStyle(() => {
-    return {
-      width: withTiming(randomWidth.value, config),
-    };
-  });
-
+const App = () => {
+  // stripe password:e@3_TG#_T&y9Wia
+  const publishableKey =
+    "pk_test_51NrEayKjXMZ1cUEfmPiI4tS8nRGLIAuMZVQElCp64qpoMsjwOP69DkPQ11zTTVMT5M6tWWuAROaj3I4XpXyBqU9a00IoCEiJDc";
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Animated.View
-        style={[
-          { width: 100, height: 80, backgroundColor: "black", margin: 30 },
-          style,
-        ]}
-      />
-      <Button
-        title="toggle"
-        onPress={() => {
-          randomWidth.value = Math.random() * 350;
-        }}
-      />
-    </View>
+    <Provider store={store}>
+      <StripeProvider publishableKey={publishableKey}>
+        <PersistGate persistor={persistor} loading={null}>
+          <NavigationContainer>
+            <StackNavigator />
+          </NavigationContainer>
+        </PersistGate>
+      </StripeProvider>
+    </Provider>
   );
-}
+};
+
+export default App;

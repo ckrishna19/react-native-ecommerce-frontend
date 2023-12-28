@@ -1,6 +1,14 @@
 {
   "expo": {
     "name": "client",
-    "slug": "client"
+    "slug": "myshoponline",
+    "extra": {
+      "eas": {
+        "projectId": "42ffecf4-329a-4fbc-865d-55ee2bc9566c"
+      }
+    },
+    "android": {
+      "package": "com.siris123.myshoponline"
+    }
   }
 }
