@@ -67,16 +67,18 @@ const Account = ({ navigation }) => {
               <Text style={tw`text-[#F5F8FB] font-light`}>
                 {allOrder?.length} Orders
               </Text>
-              <Text style={tw`text-[#F5F8FB] font-light`}>
+
+              {/* <Text style={tw`text-[#F5F8FB] font-light`}>
                 {myCart?.length} CartItems
-              </Text>
+              </Text> */}
             </View>
           </View>
           <View style={tw`w-[90%] mx-auto my-2`}>
-            <Text style={tw`text-[#F5F8FB] font-bold text-[17px] my-3`}>
+            {/* <Text style={tw`text-[#F5F8FB] font-bold text-[17px] my-3`}>
               Cart List
-            </Text>
+            </Text> */}
 
+            {/* 
             {myCart?.length === 0 ? (
               <View>
                 <Text style={tw`text-[#F5F8FB] font-light`}>
@@ -85,7 +87,7 @@ const Account = ({ navigation }) => {
               </View>
             ) : (
               myCart?.map((item) => <CartItem key={item.id} item={item} />)
-            )}
+            )} */}
 
             <Text style={tw`text-[#F5F8FB] font-bold text-[17px] my-3`}>
               Order List

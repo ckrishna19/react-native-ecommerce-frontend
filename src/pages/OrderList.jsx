@@ -47,9 +47,12 @@ const OrderList = ({ navigation }) => {
           </Text>
         </View>
         <ScrollView showsVerticalScrollIndicator={false} style={tw`h-[90%]`}>
-          {allOrder?.map((item) => (
-            <OrderItem key={item._id} item={item} />
-          ))}
+          {allOrder
+            ?.slice()
+            .sort((a, b) => new Date(b.updatedAt) - new Date(a.updatedAt))
+            .map((item) => (
+              <OrderItem key={item._id} item={item} />
+            ))}
         </ScrollView>
       </View>
     </PageWrapper>

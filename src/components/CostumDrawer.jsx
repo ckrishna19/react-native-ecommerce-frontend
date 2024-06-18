@@ -61,7 +61,9 @@ const CostumDrawer = () => {
 
   const uploadImage = async () => {
     const file = photo?.uri?.split("/");
+
     const name = file[file.length - 1];
+    console.log("name:", name);
     const formData = new FormData();
     formData.append("image", {
       name,
@@ -79,6 +81,7 @@ const CostumDrawer = () => {
       });
 
       dispatch(updateProfileImage(res.data.updateProfileImage));
+      console.log(res.data.updateProfileImage);
       setPhoto(null);
     } catch (error) {
       Alert.alert(error.response.data.message);

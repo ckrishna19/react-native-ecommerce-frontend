@@ -46,11 +46,12 @@ const VerifyToken = ({ navigation }) => {
 
   const handleVerifyOTP = async () => {
     dispatch(authLoading());
-    const otp = Number(otp?.join(""));
+    const OTP = otp?.join("");
+
     try {
       const verify = await axios.post(
         API.verifyProfile,
-        { otp },
+        { OTP },
         {
           headers: {
             "Content-Type": "application/json",

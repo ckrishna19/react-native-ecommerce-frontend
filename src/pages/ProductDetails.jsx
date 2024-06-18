@@ -98,7 +98,8 @@ const ProductDetails = () => {
                 </View>
               ))}
             </View>
-            <View style={tw`my-2 flex-row justify-between my-2`}>
+
+            {/* <View style={tw`my-2 flex-row justify-between my-2`}>
               <Text style={tw`text-[#F5F8FB] font-bold text-[15px] `}>
                 Size
               </Text>
@@ -109,8 +110,9 @@ const ProductDetails = () => {
                   Size Guide
                 </Text>
               </TouchableOpacity>
-            </View>
-            <View style={tw`flex-row flex-wrap  gap-4`}>
+            </View> */}
+
+            {/* <View style={tw`flex-row flex-wrap  gap-4`}>
               <TouchableOpacity
                 style={tw`w-[60px] h-[60px] rounded-lg bg-[#222E34] items-center justify-center `}
               >
@@ -151,7 +153,7 @@ const ProductDetails = () => {
                   3XL
                 </Text>
               </TouchableOpacity>
-            </View>
+            </View> */}
 
             <View style={tw`my-2`}>
               <Text style={tw`text-[#F5F8FB] text-[17px] font-bold`}>

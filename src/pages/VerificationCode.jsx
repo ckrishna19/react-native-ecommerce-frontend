@@ -60,7 +60,6 @@ const VerificationCode = ({ navigation }) => {
 
   return (
     <PageWrapper>
-      {}
       <View style={tw`relative  h-full `}>
         <View
           style={tw`w-[45px] ml-[10%] aspect-square rounded-full bg-[#222E34] items-center justify-center mt-10`}

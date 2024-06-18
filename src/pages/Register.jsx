@@ -35,6 +35,7 @@ const Register = ({ navigation }) => {
   const dispatch = useDispatch();
   console.log("loading:", loading, "error:", error);
   const userRegister = async () => {
+    console.log(API.register);
     if (!fullName || !email || !password || !confirmPassword) {
       return Alert.alert("Empty credentials");
     }

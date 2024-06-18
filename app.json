@@ -9,6 +9,13 @@
     },
     "android": {
       "package": "com.siris123.myshoponline"
-    }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/42ffecf4-329a-4fbc-865d-55ee2bc9566c"
+    },
+    "ios": {}
   }
 }
